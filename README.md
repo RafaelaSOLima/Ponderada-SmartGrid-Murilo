@@ -6,14 +6,14 @@ Iniciei dando uma olhada geral nas atividades a serem feitas
 
 Realizei esse passo no papel:
 
-![alt text](img\TabelaDePesos.png)
+![alt text](img/TabelaDePesos.png)
 
 2) **Diagrama topológico (manuscrito):** desenhe o grafo com os 9 vértices e as 15 arestas rotuladas com seus pesos.
 
 3) **Matriz de pesos 9×9 (manuscrita):** indexada de A a I, simétrica (M[i][j] = M[j][i]), com — nos pares sem conexão direta e na diagonal.
 
 Fiz também esses dois passos (2 e 3) no papel, mas acabei colocando eles na mesma folha...:\
-![alt text](img\MapaMatriz.png)
+![alt text](img/MapaMatriz.png)
 
 4) **Montagem no simulador:** monte a rede e anexe o print com o desenho e a Matriz de pesos do simulador. Confira célula a célula com a sua matriz manuscrita e registre qualquer correção que tenha sido necessária, em qualquer um dos lados. 
 
