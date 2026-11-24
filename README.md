@@ -38,7 +38,7 @@ de todos os vértices e os antecessores atualizados, até fechar o destino. Valo
 Realizado no papel:
 ![alt text](img/djkstra.png)
 
-Obs: na linha 2 também podeia ser D (invertido B com D) mas ia ficar muito fora da ordem alfabeticaimg/print_i.png
+Obs: na linha 2 também podeia ser D (invertido B com D) mas ia ficar muito fora da ordem alfabetica
 
 2) **Execução no simulador:** rode o Dijkstra passo a passo com origem A e o seu destino. Anexe dois prints: (i) o momento em que o terceiro vértice é fixado; (ii) o estado final, com a tabela “Estado dos vértices” e o caminho até o destino 
 
@@ -59,3 +59,30 @@ No final ambos ficam A -> D -> G
 
 
 3) *Registro das relaxações:* escolha a iteração k = (D4 mod 3) + 3. Para cada vizinho xaminado nessa iteração, escreva a conta dist[u] + W[u][v], compare com dist[v] e diga se houve relaxação ou se o valor foi mantido. Explique, com base na linha 6 do pseudocódigo do simulador, por que os vizinhos já fixos não são examinados. Se o destino for fechado antes da iteração k, continue a execução até ela. 
+
+* k = (D4mod3) + 3 = (2mod3) + 3 = 2 + 3 = **5**
+* Linha 5 é de C fechado em 22
+* C tem ligações com: B, E e F --> B e E já foram (13 e 20 vindos do A)
+* "dist[u] + W[u][v], compare com dist[v]" --> Tive que pesquisar o que era W pq não entendi, mas era a conta mesma da tabela :-|
+* F: dist[C] + W[C][F] = 22 + 16 = 38 que é o valor até agora do C mais o caminho de C a F
+* Ai pegamos o Caminho anterior que era A -20-> E -12-> F que deu 32 
+* Para chegar a F 38 > 32 ai mantem o 32 vindo de E e não de C pois fica menor o valor
+* Linha 6 do Pseudo Código: 
+
+`para cada v com W[u][v] ≠ NULO e não fixo:` --> para cada valor até agora do C mais o caminho de C a F não nulo e não fixo (verdadero) faça o seguinte:
+
+`se dist[u] + W[u][v] < dist[v]:     ▸ relaxa` --> Se os caminhs calculados até aqui são maiores que esse então relaxa o caminho antigo e guarda o novo
+
+Sempre guarda a menor soma
+
+
+
+4) **Confronto mesa × simulador:** compare a ordem de fechamento, os valores de L e os 
+antecessores. Se houver divergência, indique a iteração em que ela surgiu e a causa (erro de soma, desempate, relaxação esquecida ou relaxação indevida).
+
+Feito parte no caderno:
+![alt text](img/comparação.png)
+
+Acho que não houve erro, tem a diferença que eu não continuei até o final e parei no G (calculado o H mas não fechado) e I nem calculado foi.
+
+Não houve divergencia na ordem mas poderia na B para a C
