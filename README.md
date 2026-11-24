@@ -154,3 +154,17 @@ Quando um grau é alto, muitas rotas podem passar por ele, pois tem muitas conex
 ## Etapa 4 — Prim × Dijkstra (2,5 pts) 
 Professor acabei não tendo tempo de estudar arvore primária, por isso esse proximo exercicio vai ser feito na lógica e na fé (prometo que vou estudar Prim)
 
+1) **Questão 1 — Teste de mesa de Prim.** Execute o Prim à mão a partir de A, registrando em cada passo o vértice que entra na árvore, a aresta pela qual ele entra e o valor da chave. A regra de desempate é a mesma do Dijkstra. Calcule o custo total da Árvore Geradora Mínima e confirme no simulador (print do estado final do Prim). 
+
+Não sei fazer :-(
+
+2) **Questão 2 — Comparação das árvores.** Usando o quadro de comparação do simulador, transcreva as arestas e o custo da árvore de Prim e da árvore de caminhos mínimos de Dijkstra. Liste as subestações cuja distância a partir de A, seguindo a árvore de Prim, é maior que a distância mínima. Compare o custo da MST com a soma das distâncias de Dijkstra e explique por que a união das rotas radiais a partir de A não gera a MST. 
+Não sei fazer :-(
+
+3) **Questão 3 — Troca de raiz.** Repita Prim e Dijkstra usando o seu destino como raiz e origem. O custo da MST mudou? As arestas mudaram? E a árvore de caminhos mínimos? Justifique pela definição de cada problema.
+
+A comparação depende da tarefa anterior. 
+
+4) **Questão 4 — Decisão de engenharia.** Em até 15 linhas, responda: qual das duas árvores você usaria (a) como projeto de uma nova rede com o menor comprimento total de cabos e (b) como plano de despacho das equipes de emergência? Considere também os resultados da Etapa 3: o que acontece com cada árvore se um único ramal dela falhar, e o que isso diz sobre construir apenas a MST? 
+
+A comparação depende da tarefa anterior também ...
