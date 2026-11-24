@@ -87,3 +87,70 @@ Feito parte no caderno:
 Acho que não houve erro, tem a diferença que eu não continuei até o final e parei no G (calculado o H mas não fechado) e I nem calculado foi.
 
 Não houve divergencia na ordem mas poderia na B para a C
+
+
+## Etapa 3 — Contingência com o modo Falha (2,5 pts)
+1) **Questão 1 — Rota e custo ótimo.** Qual é a distância total mínima (em km) e a sequência exata de subestações de A até o seu destino? Continue o Dijkstra até fechar todos os vértices e liste a ordem cronológica completa de fechame
+
+A ordem com os valores tem na tabela do ultimo exercício.
+
+A distancia fica: A -13-> D -18-> G  = 31
+
+2) **Questão 2 — Varredura de falhas na rota.** Derrube, um de cada vez, cada ramal que pertence à sua rota ótima. Para cada caso, registre em uma tabela: o ramal em falha, a nova rota, o novo custo, o acréscimo em km e o acréscimo percentual. Indique o(s) ramal(is) crítico(s), isto é, cuja falha causa o maior acréscimo. Se dois ramais produzirem o mesmo desvio, explique por quê. Anexe o print da falha do ramal crítico.
+
+Fiz no simulador, e anotei na tabela
+
+![alt text](img/tabelaFalha.png)
+Todos os ramais do meu trajeto com falha resultam no mesmo acrecimo, então ou todos são criticos ou nenhum é,  isso não sei dizer, mas diria que todos são pois +50% de km é bastante.
+
+Esse caminho é escolhido por ser o de menor custo disconsiderando os ramais que não funcionam é como se não existissem.
+
+ ai ficaria assim cada tentativa:
+
+**Sem AD :**
+![alt text](img/semAD.png)
+
+A pode ir a B e a E, B parece menor mas para ir para E fica maior ABE = 13 +13 =26 > AE 20
+E pode ir para B (já passou), D, F ou H, indo para F teriamos que voltar para H indo para D seria 20 + 12+ 18 = 50 > 20 + 17 + 10 = 47
+
+(Talvez tenha ficado confuso ...)
+
+**Sem DG:**
+![alt text](img/semDG.png)
+
+Se seguissimos o caminho inicial: Poderiamos fazer ADEHG com 52 ou ADEFIHG com 73 entre outras combinações todas maiores que os 47 
+
+Em resumo é a menor rota.
+
+3) **Questão 3 — Folga do primeiro ramal.** Sem usar o modo Falha, aumente progressivamente o peso do 
+primeiro ramal da sua rota ótima (clique na pílula do peso ou na célula da matriz). Encontre o maior 
+acréscimo inteiro Δ para o qual o custo mínimo de A até o destino não muda. Anexe os prints com peso 
+w + Δ e w + Δ + 1. Compare Δ com o acréscimo obtido para esse mesmo ramal na Questão 2 e explique 
+a relação entre os dois números. 
+
+Achei um pouco confuso, então não sei se está correto...
+
+Fiz uma tabela para facilitar:
+![alt text](img/tabela+peso.png)
+
+Como sabemos baseado no exercicio anterior a segunda rota mais rapida seria de 47 km, então paraa rota atual de 31km não ser a escolhida com certeza ela pode ter no maximo 28 pois ai a rota fica com 46, com 29 empata (mas o simulador continua escolhendo ela) e com 30 a rota melhor passa ser a de 47 AEHG
+
+Ou seja quando a soma ADG passa a ser maior que AEHG a AEHG será a escolhida.
+
+4) **Questão 4 — Interdição da subestação E.** Simule a perda da subestação E colocando em falha todos 
+os ramais incidentes a ela. Monte uma tabela com a distância de A a cada subestação antes e depois da 
+interdição e indique quais pioram e em quanto. Sua rota até o destino mudou? Explique por que a perda 
+de um vértice de grau alto pode afetar muito ou quase nada uma rota específica.
+
+Fiz uma tabela onde calculei na mão as rotas possiveis sem E e Usei o simulador para a rota ótima com E:
+![alt text](img/tabelaDistancia.png)
+
+AF piorou em 6km, AH piorou em 4km e AI piorou em 6km
+
+A minha rota até o destino não mudou.
+
+Quando um grau é alto, muitas rotas podem passar por ele, pois tem muitas conexões, quando ele é desativado essas rotas não existem mais, no caso do exeplo é uma rota central então sempre é obrigado a ir pelas laterais, algumas vezes dando volta ao envez de passar pelo meio.
+
+## Etapa 4 — Prim × Dijkstra (2,5 pts) 
+Professor acabei não tendo tempo de estudar arvore primária, por isso esse proximo exercicio vai ser feito na lógica e na fé (prometo que vou estudar Prim)
+
