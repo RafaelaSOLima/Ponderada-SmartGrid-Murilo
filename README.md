@@ -30,6 +30,32 @@ A:3, B:3, C:3, D:3, E:6, F:4, G:2, H:4, I:2 (fiz contando a quantidade de numero
 
 * **(c) Qual subestação tem o maior grau e o que isso indica sobre o risco operacional da rede?** A subcestação E tem maior grau com 6, não sei se entendi a segunda parte da pergunta, mas já que muitas estações estão conectadas a ela em caso de mais de uma estação falhar é possivel que muitas equipes tenham que passar pelo mesmo ponto (sinceramente não sei se entendi o que é o risco)
 
+## Etapa 2 — Dijkstra: teste de mesa manual e confronto com o simulador (3,0 pts)
+
+1) **Teste de mesa manuscrito:** registre, a cada iteração, o vértice fechado u, L[u], as distâncias L[v] 
+de todos os vértices e os antecessores atualizados, até fechar o destino. Valores entre colchetes indicam vértices já fechados.
+
+Realizado no papel:
+![alt text](img/djkstra.png)
+
+Obs: na linha 2 também podeia ser D (invertido B com D) mas ia ficar muito fora da ordem alfabeticaimg/print_i.png
+
+2) **Execução no simulador:** rode o Dijkstra passo a passo com origem A e o seu destino. Anexe dois prints: (i) o momento em que o terceiro vértice é fixado; (ii) o estado final, com a tabela “Estado dos vértices” e o caminho até o destino 
+
+**Primeiro a (i) o momento em que o terceiro vértice é fixado:**
+
+![alt text](img/print_i.png)
+
+No simulador o D ainda não foi calculado na interação, no meu caso eu calculei antes pq a tabela pedia como o exemplo
 
 
+**(ii) o estado final:**
 
+![alt text](img/print_ii.png)
+
+o simulador não parou no G, ele continuou até fechar todos os vértices, eu parei quando chegou a fechar o G
+
+No final ambos ficam A -> D -> G
+
+
+3) *Registro das relaxações:* escolha a iteração k = (D4 mod 3) + 3. Para cada vizinho xaminado nessa iteração, escreva a conta dist[u] + W[u][v], compare com dist[v] e diga se houve relaxação ou se o valor foi mantido. Explique, com base na linha 6 do pseudocódigo do simulador, por que os vizinhos já fixos não são examinados. Se o destino for fechado antes da iteração k, continue a execução até ela. 
