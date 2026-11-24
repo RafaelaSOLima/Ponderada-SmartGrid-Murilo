@@ -81,7 +81,8 @@ Sempre guarda a menor soma
 antecessores. Se houver divergência, indique a iteração em que ela surgiu e a causa (erro de soma, desempate, relaxação esquecida ou relaxação indevida).
 
 Feito parte no caderno:
-![alt text](img/comparação.png)
+
+![alt text](img\comparação.png)
 
 Acho que não houve erro, tem a diferença que eu não continuei até o final e parei no G (calculado o H mas não fechado) e I nem calculado foi.
 
